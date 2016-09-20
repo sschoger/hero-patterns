@@ -82,7 +82,8 @@
                                     Foreground color
                                 </label>
                                 <div class="color-input">
-                                    <button class="jscolor {value: '{{ fgColor }}', valueElement: null, onFineChange:'updateFg(this)'} color-input-swatch"></button>
+                                    <button class="jscolor {value: '{{ fgColor }}', valueElement: 'fg-color', onFineChange:'updateFg(this)'} color-input-swatch" data-fg></button>
+                                    <input type="hidden" id="fg-color" onchange="updateFgSlow(this)">
                                     <span class="color-input-value">{{ fgColor }}</span>
                                 </div>
                             </div>
@@ -93,7 +94,8 @@
                                     Background color
                                 </label>
                                 <div class="color-input">
-                                    <button class="jscolor {value: '{{ bgColor }}', valueElement: null, onFineChange:'updateBg(this)'} color-input-swatch"></button>
+                                    <button class="jscolor {value: '{{ bgColor }}', valueElement: 'bg-color', onFineChange:'updateBg(this)'} color-input-swatch" data-bg></button>
+                                    <input type="hidden" id="bg-color" onchange="updateBgSlow(this)">
                                     <span class="color-input-value">{{ bgColor }}</span>
                                 </div>
                             </div>
@@ -113,50 +115,10 @@
         <section class="patterns">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="pattern-container pattern-1" type="button" data-toggle="modal" data-target="#myModal">
+                    <div class="col-xs-12 col-sm-6" v-for="pattern in patterns">
+                        <div class="pattern-container" type="button" data-toggle="modal" data-target="#myModal" :style="style(pattern)" @click="selectedPattern = pattern">
                             <div class="pattern-info">
-                                <h3 class="pattern-title">Overlapping Diamonds</h3>
-                                <div class="pattern-size">512 kB</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="pattern-container" :style="style">
-                            <div class="pattern-info">
-                                <h3 class="pattern-title">Overlapping Diamonds</h3>
-                                <div class="pattern-size">512 kB</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="pattern-container pattern-3">
-                            <div class="pattern-info">
-                                <h3 class="pattern-title">Overlapping Diamonds</h3>
-                                <div class="pattern-size">512 kB</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="pattern-container pattern-4">
-                            <div class="pattern-info">
-                                <h3 class="pattern-title">Overlapping Diamonds</h3>
-                                <div class="pattern-size">512 kB</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="pattern-container pattern-5">
-                            <div class="pattern-info">
-                                <h3 class="pattern-title">Overlapping Diamonds</h3>
-                                <div class="pattern-size">512 kB</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="pattern-container pattern-6">
-                            <div class="pattern-info">
-                                <h3 class="pattern-title">Overlapping Diamonds</h3>
+                                <h3 class="pattern-title">{{ pattern.name }}</h3>
                                 <div class="pattern-size">512 kB</div>
                             </div>
                         </div>
@@ -215,17 +177,17 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times; Close</span></button>
-                        <h3 class="modal-title" id="myModalLabel">Overlapping Diamonds</h3>
+                        <h3 class="modal-title" id="myModalLabel">{{ selectedPattern.name }}</h3>
                     </div>
                     <div class="modal-body">
                         <form>
                             <label>Generated code</label>
-                            <textarea class="form-control" rows="3" v-model="css"></textarea>
+                            <textarea class="form-control" rows="3">{{ css(selectedPattern) }}</textarea>
                         </form>
                         <div class="row modal-appearance">
                             <div>
                                 <div class="col-xs-12 col-sm-6">
-                                    <div class="pattern-container pattern-1"></div>
+                                    <div class="pattern-container" :style="style(selectedPattern)"></div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 appearance-settings">
                                     <h4>Appearance Settings</h4>
@@ -234,7 +196,8 @@
                                             Foreground color
                                         </label>
                                         <div class="color-input">
-                                            <button class="jscolor {value: '{{ fgColor }}', valueElement: null, onFineChange:'updateFg(this)'} color-input-swatch"></button>
+                                            <button class="jscolor {value: '{{ fgColor }}', valueElement: 'modal-fg-color', onFineChange:'updateFg(this)'} color-input-swatch" data-fg></button>
+                                            <input type="hidden" id="modal-fg-color" onchange="updateFgSlow(this)">
                                             <span class="color-input-value">{{ fgColor }}</span>
                                         </div>
                                     </div>
@@ -243,7 +206,8 @@
                                             Background color
                                         </label>
                                         <div class="color-input">
-                                            <button class="jscolor {value: '{{ bgColor }}', valueElement: null, onFineChange:'updateBg(this)'} color-input-swatch"></button>
+                                            <button class="jscolor {value: '{{ bgColor }}', valueElement: 'modal-bg-color', onFineChange:'updateBg(this)'} color-input-swatch" data-bg></button>
+                                            <input type="hidden" id="modal-bg-color" onchange="updateBgSlow(this)">
                                             <span class="color-input-value">{{ bgColor }}</span>
                                         </div>
                                     </div>

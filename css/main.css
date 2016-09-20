@@ -381,6 +381,10 @@ input[type=range]::-webkit-slider-runnable-track {
     height: 22px;
 }
 
+/* Prevent jscolor from showing up behind modal */
+.modal-backdrop { z-index: 800; }
+.modal { z-index: 900; }
+
 .modal-content {
     -webkit-box-shadow: none;
     box-shadow: none;
