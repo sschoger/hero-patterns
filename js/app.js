@@ -86,7 +86,7 @@ var vm = new Vue({
             this.modal.fgColor = this.fgColor;
             this.modal.bgColor = this.bgColor;
             this.modal.opacity = this.opacity;
-            $(vm.$els.modalFgColor).spectrum("set", this.FgColor);
+            $(vm.$els.modalFgColor).spectrum("set", this.fgColor);
             $(vm.$els.modalBgColor).spectrum("set", this.bgColor);
         },
         selectPattern: function selectPattern(pattern) {
