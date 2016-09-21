@@ -115,7 +115,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6" v-for="pattern in patterns">
-                        <div class="pattern-container" type="button" data-toggle="modal" data-target="#myModal" :style="style(pattern)" @click="selectedPattern = pattern">
+                        <div class="pattern-container" type="button" data-toggle="modal" data-target="#myModal" :style="style(pattern)" @click="selectPattern(pattern)">
                             <div class="pattern-info">
                                 <h3 class="pattern-title">{{ pattern.name }}</h3>
                                 <div class="pattern-size">512 kB</div>
@@ -181,12 +181,12 @@
                     <div class="modal-body">
                         <form>
                             <label>Generated code</label>
-                            <textarea class="form-control" rows="3">{{ css(selectedPattern) }}</textarea>
+                            <textarea class="form-control" rows="4">{{ css }}</textarea>
                         </form>
                         <div class="row modal-appearance">
                             <div>
                                 <div class="col-xs-12 col-sm-6">
-                                    <div class="pattern-container" :style="style(selectedPattern)"></div>
+                                    <div class="pattern-container" :style="modalStyle"></div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 appearance-settings">
                                     <h4>Appearance Settings</h4>
@@ -196,7 +196,7 @@
                                         </label>
                                         <div class="color-input">
                                             <input type="text" v-el:modal-fg-color>
-                                            <span class="color-input-value">{{ fgColor }}</span>
+                                            <span class="color-input-value">{{ modal.fgColor }}</span>
                                         </div>
                                     </div>
                                     <div class="form-control">
@@ -205,16 +205,16 @@
                                         </label>
                                         <div class="color-input">
                                             <input type="text" v-el:modal-bg-color>
-                                            <span class="color-input-value">{{ bgColor }}</span>
+                                            <span class="color-input-value">{{ modal.bgColor }}</span>
                                         </div>
                                     </div>
                                     <div class="form-control">
                                         <label>
                                             Foreground Opacity
                                         </label>
-                                        <input type="range" min="0" max="1" step="0.01" v-model="opacity">
+                                        <input type="range" min="0" max="1" step="0.01" v-model="modal.opacity">
                                     </div>
-                                    <button type="button" class="reset-btn btn">Reset</button>
+                                    <button type="button" class="reset-btn btn" @click="reset">Reset</button>
                                 </div>
                             </div>
                         </div>

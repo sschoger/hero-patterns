@@ -4,10 +4,12 @@ var vm = new Vue({
     data: {
         bgColor: '#279C4a',
         fgColor: '#000000',
-        fgElements: [],
-        bgElements: [],
-        size: 1,
         opacity: .2,
+        modal: {
+            bgColor: '#279C4a',
+            fgColor: '#000000',
+            opacity: .2,
+        },
         patterns: [{
             name: 'Aztec',
             image: '<svg width="32" height="64" viewBox="0 0 32 64" xmlns="http://www.w3.org/2000/svg"><path d="M0 28h20V16h-4v8H4V4h28v28h-4V8H8v12h4v-8h12v20H0v-4zm12 8h20v4H16v24H0v-4h12V36zm16 12h-4v12h8v4H20V44h12v12h-4v-8zM0 36h8v20H0v-4h4V40H0v-4z" fill="#000" fill-rule="evenodd"/></svg>'
@@ -68,51 +70,79 @@ var vm = new Vue({
         }],
         selectedPattern: null
     },
+    computed: {
+        modalStyle: function modalStyle() {
+            return {
+                backgroundColor: this.modal.bgColor,
+                backgroundImage: this.bgPattern(this.selectedPattern, this.modal.fgColor, this.modal.opacity)
+            };
+        },
+        css: function css(pattern) {
+            return ('background-color: ' + this.modal.bgColor + ',\nbackground-image: ' + this.bgPattern(this.selectedPattern, this.modal.fgColor, this.modal.opacity) + ',').trim();
+        }
+    },
     methods: {
+        reset: function reset() {
+            this.modal.fgColor = this.fgColor;
+            this.modal.bgColor = this.bgColor;
+            this.modal.opacity = this.opacity;
+            $(vm.$els.modalFgColor).spectrum("set", this.FgColor);
+            $(vm.$els.modalBgColor).spectrum("set", this.bgColor);
+        },
+        selectPattern: function selectPattern(pattern) {
+            this.selectedPattern = pattern;
+            this.reset();
+        },
         style: function style(pattern) {
             return {
                 backgroundColor: this.bgColor,
-                backgroundImage: this.bgPattern(pattern)
+                backgroundImage: this.bgPattern(pattern, this.fgColor, this.opacity)
             };
         },
-        bgPattern: function bgPattern(pattern) {
-            var svg = pattern.image.replace('fill="#000"', 'fill="' + this.fgColor + '" fill-opacity="' + this.opacity + '"').replace(/\"/g, '\'').replace(/\</g, '%3C').replace(/\>/g, '%3E').replace(/\&/g, '%26').replace(/\#/g, '%23');
+        bgPattern: function bgPattern(pattern, fgColor, opacity) {
+            var svg = pattern.image.replace('fill="#000"', 'fill="' + fgColor + '" fill-opacity="' + opacity + '"').replace(/\"/g, '\'').replace(/\</g, '%3C').replace(/\>/g, '%3E').replace(/\&/g, '%26').replace(/\#/g, '%23');
             return 'url("data:image/svg+xml,' + svg + '")';
-        },
-        css: function css(pattern) {
-            return ('background-color: ' + this.bgColor + ',\nbackground-image: ' + this.bgPattern(pattern) + ',').trim();
         }
     },
     created: function created() {
         this.selectedPattern = this.patterns[0];
     },
     ready: function ready() {
-        var fgOptions = {
+        $(vm.$els.fgColor).spectrum({
             replacerClassName: 'color-input-swatch',
             clickoutFiresChange: true,
             color: vm.fgColor,
             move: function move(color) {
                 vm.fgColor = color.toHexString();
-                $(vm.$els.fgColor).spectrum("set", color.toHexString());
-                $(vm.$els.modalFgColor).spectrum("set", color.toHexString());
             }
-        };
+        });
 
-        var bgOptions = {
+        $(vm.$els.bgColor).spectrum({
             replacerClassName: 'color-input-swatch',
             clickoutFiresChange: true,
             color: vm.bgColor,
             move: function move(color) {
                 vm.bgColor = color.toHexString();
-                $(vm.$els.bgColor).spectrum("set", color.toHexString());
-                $(vm.$els.modalBgColor).spectrum("set", color.toHexString());
             }
-        };
+        });
 
-        $(vm.$els.fgColor).spectrum(fgOptions);
-        $(vm.$els.bgColor).spectrum(bgOptions);
-        $(vm.$els.modalFgColor).spectrum(fgOptions);
-        $(vm.$els.modalBgColor).spectrum(bgOptions);
+        $(vm.$els.modalFgColor).spectrum({
+            replacerClassName: 'color-input-swatch',
+            clickoutFiresChange: true,
+            color: vm.modal.fgColor,
+            move: function move(color) {
+                vm.modal.fgColor = color.toHexString();
+            }
+        });
+
+        $(vm.$els.modalBgColor).spectrum({
+            replacerClassName: 'color-input-swatch',
+            clickoutFiresChange: true,
+            color: vm.modal.bgColor,
+            move: function move(color) {
+                vm.modal.bgColor = color.toHexString();
+            }
+        });
     }
 });
 
