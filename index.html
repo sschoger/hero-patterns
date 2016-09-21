@@ -14,6 +14,7 @@
     <title>Hero Patterns</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/unslider.css">
     <link rel="stylesheet" href="css/unslider-dots.css">
@@ -82,8 +83,7 @@
                                     Foreground color
                                 </label>
                                 <div class="color-input">
-                                    <button class="jscolor {value: '{{ fgColor }}', valueElement: 'fg-color', onFineChange:'updateFg(this)'} color-input-swatch" data-fg></button>
-                                    <input type="hidden" id="fg-color" onchange="updateFgSlow(this)">
+                                    <input type="text" v-el:fg-color>
                                     <span class="color-input-value">{{ fgColor }}</span>
                                 </div>
                             </div>
@@ -94,8 +94,7 @@
                                     Background color
                                 </label>
                                 <div class="color-input">
-                                    <button class="jscolor {value: '{{ bgColor }}', valueElement: 'bg-color', onFineChange:'updateBg(this)'} color-input-swatch" data-bg></button>
-                                    <input type="hidden" id="bg-color" onchange="updateBgSlow(this)">
+                                    <input type="text" v-el:bg-color>
                                     <span class="color-input-value">{{ bgColor }}</span>
                                 </div>
                             </div>
@@ -196,8 +195,7 @@
                                             Foreground color
                                         </label>
                                         <div class="color-input">
-                                            <button class="jscolor {value: '{{ fgColor }}', valueElement: 'modal-fg-color', onFineChange:'updateFg(this)'} color-input-swatch" data-fg></button>
-                                            <input type="hidden" id="modal-fg-color" onchange="updateFgSlow(this)">
+                                            <input type="text" v-el:modal-fg-color>
                                             <span class="color-input-value">{{ fgColor }}</span>
                                         </div>
                                     </div>
@@ -206,8 +204,7 @@
                                             Background color
                                         </label>
                                         <div class="color-input">
-                                            <button class="jscolor {value: '{{ bgColor }}', valueElement: 'modal-bg-color', onFineChange:'updateBg(this)'} color-input-swatch" data-bg></button>
-                                            <input type="hidden" id="modal-bg-color" onchange="updateBgSlow(this)">
+                                            <input type="text" v-el:modal-bg-color>
                                             <span class="color-input-value">{{ bgColor }}</span>
                                         </div>
                                     </div>
@@ -229,10 +226,11 @@
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
-    <script src="/js/app.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 
 </html>

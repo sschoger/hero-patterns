@@ -304,8 +304,31 @@ a.browse-patterns {
     border: none;
     display: block;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0;
     width: 34px;
     outline: none;
+    background: none;
+}
+
+.color-input-swatch.sp-active,
+.color-input-swatch:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.sp-container {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 0.25em;
+}
+
+.sp-dd {
+    display: none;
+}
+
+.sp-preview {
+    height: 100%;
+    width: 100%;
+    border: none;
+    margin-right: 0;
 }
 
 .color-input-value {
@@ -365,20 +388,6 @@ input[type=range]::-webkit-slider-runnable-track {
     background: #F5F5F5;
     border-radius: 4px;
     border: 1px solid #B7B7B7;
-}
-
-.sp-dd {
-    display: none;
-}
-
-.sp-replacer {
-    padding: 4px;
-    border-radius: 4px;
-}
-
-.sp-preview {
-    margin-right: 0;
-    height: 22px;
 }
 
 /* Prevent jscolor from showing up behind modal */
