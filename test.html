@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+        <link rel="author" href="humans.txt">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+        <style>
+            body {
+                padding: 5em;
+            }
+
+            .form-control {
+                display: inline-block;
+                width: 300px;
+            }
+            .form-control > label {
+                display: block;
+                margin-bottom: 0.5em;
+            }
+            .color-input {
+                display: flex;
+                border-radius: 0.25em;
+                border: 1px solid rgb(167, 167, 167);
+                overflow: hidden;
+            }
+            .color-input-swatch {
+                border: none;
+                display: block;
+                border-right: 1px solid rgb(167, 167, 167);
+                width: 2.25em;
+                outline: none;
+            }
+            .color-input-value {
+                display: block;
+                padding: 0.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div class="form-control">
+                <label>
+                    Foreground color
+                </label>
+                <div class="color-input">
+                    <button class="jscolor {value: '{{ fgColor }}', valueElement: null, onFineChange:'updateFg(this)'} color-input-swatch"></button>
+                    <span class="color-input-value">{{ fgColor }}</span>
+                </div>
+            </div>
+            <div class="form-control">
+                <label>
+                    Background color
+                </label>
+                <div class="color-input">
+                    <button class="jscolor {value: '{{ bgColor }}', valueElement: null, onFineChange:'updateBg(this)'} color-input-swatch"></button>
+                    <span class="color-input-value">{{ bgColor }}</span>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.js"></script>
+        <script>
+            function updateFg(color) {
+                console.log(color);
+                vm.updateFg(color)
+            }
+            function updateBg(color) {
+                vm.updateBg(color)
+            }
+
+            const vm = new Vue({
+                data: {
+                    fgColor: '#988CC8',
+                    bgColor: '#C78BC3',
+                },
+                methods: {
+                    updateFg(color) {
+                        this.fgColor = ('#' + color).toUpperCase()
+                    },
+                    updateBg(color) {
+                        this.bgColor = ('#' + color).toUpperCase()
+                    }
+                }
+            });
+
+            vm.$mount('#app');
+        </script>
+    </body>
+</html>
