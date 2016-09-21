@@ -109,6 +109,8 @@ var vm = new Vue({
     },
     ready: function ready() {
         $(vm.$els.fgColor).spectrum({
+            showInput: true,
+            preferredFormat: "hex",
             replacerClassName: 'color-input-swatch',
             clickoutFiresChange: true,
             color: vm.fgColor,
@@ -118,6 +120,8 @@ var vm = new Vue({
         });
 
         $(vm.$els.bgColor).spectrum({
+            showInput: true,
+            preferredFormat: "hex",
             replacerClassName: 'color-input-swatch',
             clickoutFiresChange: true,
             color: vm.bgColor,
@@ -127,6 +131,8 @@ var vm = new Vue({
         });
 
         $(vm.$els.modalFgColor).spectrum({
+            showInput: true,
+            preferredFormat: "hex",
             replacerClassName: 'color-input-swatch',
             clickoutFiresChange: true,
             color: vm.modal.fgColor,
@@ -136,6 +142,8 @@ var vm = new Vue({
         });
 
         $(vm.$els.modalBgColor).spectrum({
+            showInput: true,
+            preferredFormat: "hex",
             replacerClassName: 'color-input-swatch',
             clickoutFiresChange: true,
             color: vm.modal.bgColor,

@@ -298,16 +298,16 @@ a.browse-patterns {
     border-radius: 0.25em;
     border: 1px solid rgba(0, 0, 0, 0.4);
     overflow: hidden;
+    height: 36px;
 }
 
 .color-input-swatch {
     border: none;
     display: block;
-    border-right: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 0;
-    width: 34px;
+    width: 100%;
     outline: none;
     background: none;
+    padding: 6px;
 }
 
 .color-input-swatch.sp-active,
@@ -329,6 +329,10 @@ a.browse-patterns {
     width: 100%;
     border: none;
     margin-right: 0;
+}
+
+.sp-preview-inner {
+    border: 1px solid rgba(0,0,0,0.2);
 }
 
 .color-input-value {
