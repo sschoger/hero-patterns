@@ -65,7 +65,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Roboto', sans-serif;
-    color: #384348;
+    color: #3D3847;
     position: relative;
 }
 
@@ -129,14 +129,14 @@ nav.navbar a:hover {
 p {
     font-size: 18px;
     font-weight: 400;
-    color: #6F7E85;
+    color: #86818F;
     line-height: 26px;
 }
 
 p.introducing {
     text-transform: uppercase;
     font-weight: 500;
-    color: #9CA9AF;
+    color: #AEA9B8;
     margin-bottom: 0px;
 }
 
@@ -177,6 +177,17 @@ small {
     color: #6F7E85;
     font-size: 14px;
     line-height: 20px;
+}
+
+a {
+    color: #9179BA;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+a:hover {
+    color: #55476E;
+    text-decoration: none;
 }
 
 .selected-pattern-header{
@@ -242,8 +253,9 @@ small {
 .btn-default:focus,
 .btn-default:active,
 .btn-default:active:focus {
-    background-color: #FAFAFA;
-    color: #68B5DB;
+    background-color: #ffffff;
+    color: #55476E;
+    border: 1px solid #9179BA;
 }
 
 section {
@@ -731,6 +743,25 @@ body.thank-you-page {
     margin-bottom: 5px;
 }
 
+.sp-container button:hover {
+    background-color: #55476E;
+    background-image: none;
+    border: #9179BA;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 1;
+    padding: 8px 20px 10px 20px;
+    width: 100%;
+    text-align: center;
+    text-shadow: none;
+    vertical-align: middle;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.10);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
 .sp-palette-button-container, .sp-button-container {
     float: none;
 }
@@ -855,4 +886,19 @@ body.thank-you-page {
     .btn-twitter {
         margin-bottom: 20px;
     }
+    
+    .modal-header {
+    padding: 20px;
+    border-bottom: 0;
+    background: #3D3847;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    padding: 20px;
+    border-top: none;
+}
 }
