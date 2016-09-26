@@ -459,7 +459,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 }
 .sp-cancel {
     font-size: 11px;
-    color: #d93f3f !important;
+    color: #9179BA !important;
     margin:0;
     padding:2px;
     margin-right: 5px;
@@ -468,7 +468,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 
 }
 .sp-cancel:hover {
-    color: #d93f3f !important;
+    color: #9179BA !important;
     text-decoration: underline;
 }
 
