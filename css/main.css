@@ -766,6 +766,59 @@ body.thank-you-page {
     float: none;
 }
 
+.heroicons-banner {
+	margin-bottom: 40px;
+	border-radius: 6px;
+	padding: 15px 30px;
+  background-color: #e9eeed;
+  border: 2px solid #75C3B5
+}
+
+.heroicons-banner-text{
+	color: #39403E;
+	font-size: 20px;
+	display: inline;
+}
+
+.heroicons-banner-cta{
+	color: #409982;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.heroicons-logo{
+	display: inline-block;
+}
+
+@media (max-width: 992px) {
+	.heroicons-banner {
+	margin-bottom: 40px;
+	border-radius: 6px;
+	padding: 15px 30px;
+  background-color: #e9eeed;
+  border: 2px solid #75C3B5;
+  text-align: center;
+}
+
+.heroicons-banner-text{
+	color: #39403E;
+	font-size: 20px;
+	line-height: 0;
+	text-align: center;
+	line-height: 28px;
+}
+
+.heroicons-banner-cta{
+	color: #409982;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.heroicons-logo{
+	margin: 0 auto 10px auto;
+	display: inherit;
+}
+}
 
 @media (max-width: 767px) {
     nav.navbar a {
