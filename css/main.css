@@ -230,6 +230,9 @@ a:hover {
     text-decoration: none;
 }
 
+.svg-icon{
+	margin-top: -2px;
+}
 
 .btn-primary:hover,
 .btn-primary:focus,
