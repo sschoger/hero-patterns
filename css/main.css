@@ -790,6 +790,10 @@ body.thank-you-page {
 	display: inline-block;
 }
 
+.aligned-center{
+    text-align: center;
+}
+
 @media (max-width: 992px) {
 	.heroicons-banner {
 	margin-bottom: 40px;
