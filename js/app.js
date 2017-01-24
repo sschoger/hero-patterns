@@ -11,6 +11,10 @@ var vm = new Vue({
             opacity: .4,
         },
         patterns: [{
+            name: 'Hexagons',
+            image: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 28 49"><g fill-rule="evenodd"><g id="hexagons" fill="#000" fill-rule="nonzero"><path d="M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z"/></g></g></svg>',
+            download: './svg/hexagons.zip'
+        }, {
             name: 'Charlie Brown',
             image: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12"><g fill-rule="evenodd"><g id="charlie-brown" fill="#000"><path d="M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z"/></g></g></svg>',
             download: './svg/charlie-brown.zip'
