@@ -11,6 +11,10 @@ var vm = new Vue({
             opacity: .4,
         },
         patterns: [{
+            name: 'Squares',
+            image: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><g fill-rule="evenodd"><g id="Artboard-5" fill="#000" fill-rule="nonzero"><path d="M6 18h12V6H6v12zM4 4h16v16H4V4z"/></g></g></svg>',
+            download: './svg/squares.zip'
+        }, {
             name: 'Falling Triangles',
             image: '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="72" viewBox="0 0 36 72"><g fill-rule="evenodd"><g fill="#000"><path d="M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z"/></g></g></svg>',
             download: './svg/falling-triangles.zip'
