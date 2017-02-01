@@ -11,6 +11,12 @@ var vm = new Vue({
             opacity: .4,
         },
         patterns: [{
+
+
+            name: 'YYY',
+            image: '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="96" viewBox="0 0 60 96"><g fill-rule="evenodd"><g fill="#000"><path d="M36 10a6 6 0 0 1 12 0v12a6 6 0 0 1-6 6 6 6 0 0 0-6 6 6 6 0 0 1-12 0 6 6 0 0 0-6-6 6 6 0 0 1-6-6V10a6 6 0 1 1 12 0 6 6 0 0 0 12 0zm24 78a6 6 0 0 1-6-6 6 6 0 0 0-6-6 6 6 0 0 1-6-6V58a6 6 0 1 1 12 0 6 6 0 0 0 6 6v24zM0 88V64a6 6 0 0 0 6-6 6 6 0 0 1 12 0v12a6 6 0 0 1-6 6 6 6 0 0 0-6 6 6 6 0 0 1-6 6z"/></g></g></svg>',
+            download: './svg/yyy.zip'
+        }, {
             name: 'Squares',
             image: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><g fill-rule="evenodd"><g id="Artboard-5" fill="#000" fill-rule="nonzero"><path d="M6 18h12V6H6v12zM4 4h16v16H4V4z"/></g></g></svg>',
             download: './svg/squares.zip'
