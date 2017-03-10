@@ -396,6 +396,7 @@ var vm = new Vue({
         });
 
         $(vm.$els.modalFgColor).spectrum({
+            appendTo: '#myModal',
             showInput: true,
             preferredFormat: "hex",
             replacerClassName: 'color-input-swatch',
@@ -410,6 +411,7 @@ var vm = new Vue({
         });
 
         $(vm.$els.modalBgColor).spectrum({
+            appendTo: '#myModal',
             showInput: true,
             preferredFormat: "hex",
             replacerClassName: 'color-input-swatch',
