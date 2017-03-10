@@ -375,6 +375,9 @@ var vm = new Vue({
             color: vm.fgColor,
             move: function move(color) {
                 vm.fgColor = color.toHexString();
+            },
+            change: function change(color) {
+                vm.fgColor = color.toHexString();
             }
         });
 
@@ -385,6 +388,9 @@ var vm = new Vue({
             clickoutFiresChange: true,
             color: vm.bgColor,
             move: function move(color) {
+                vm.bgColor = color.toHexString();
+            },
+            change: function change(color) {
                 vm.bgColor = color.toHexString();
             }
         });
@@ -397,6 +403,9 @@ var vm = new Vue({
             color: vm.modal.fgColor,
             move: function move(color) {
                 vm.modal.fgColor = color.toHexString();
+            },
+            change: function change(color) {
+                vm.modal.fgColor = color.toHexString();
             }
         });
 
@@ -407,6 +416,9 @@ var vm = new Vue({
             clickoutFiresChange: true,
             color: vm.modal.bgColor,
             move: function move(color) {
+                vm.modal.bgColor = color.toHexString();
+            },
+            change: function change(color) {
                 vm.modal.bgColor = color.toHexString();
             }
         });
